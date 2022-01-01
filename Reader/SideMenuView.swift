@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct SideMenuView: View {
-    @Binding var isShowing: Bool
-    
     var body: some View {
         VStack {
             Divider()
@@ -60,6 +58,6 @@ struct SideMenuView: View {
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuView(isShowing: .constant(true))
+        SideMenuView()
     }
 }
