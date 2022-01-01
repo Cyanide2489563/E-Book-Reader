@@ -39,15 +39,9 @@ struct ContentView: View {
                     Button(action: {
                         self.isShowing.toggle()
                     }) {
-                        if isShowing {
-                            Image(systemName: "xmark")
-                                .font(.title)
-                                .foregroundColor(.gray)
-                        } else {
-                            Image(systemName: "text.justify")
-                                .font(.title)
-                                .foregroundColor(.gray)
-                        }
+                        Image(systemName: isShowing ? "xmark" : "text.justify")
+                            .font(.title)
+                            .foregroundColor(.gray)
                     }
                 }
             }
