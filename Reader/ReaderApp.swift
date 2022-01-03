@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ReaderApp: App {
+    @StateObject var viewModel = BooksViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }

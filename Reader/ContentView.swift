@@ -14,14 +14,13 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 Color.white.ignoresSafeArea(.all, edges: .all)
-                VStack {
-                    BookListView()
-                }
+                BookListView()
+                    .offset(y: 20)
                 GeometryReader { _ in
                     HStack {
                         Spacer()
                         if (isShowing) {
-                            SideMenuView(isShowing: $isShowing)
+                            SideMenuView()
                                 .offset(x: isShowing ? -(UIScreen.main.bounds.width / 2) : -UIScreen.main.bounds.width)
                                 .animation(.easeInOut(duration: 0.5), value: isShowing)
                         }
@@ -32,8 +31,7 @@ struct ContentView: View {
             .onAppear {
                 isShowing = false
             }
-            .navigationBarTitle("電子書閱讀器")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle("圖書庫", displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {

@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct RemoveBookView: View {
+    
     var body: some View {
-        Text("Remove Book")
+        ScrollView(.vertical) {
+            Text("Hello")
+        }
+        .offset(y: 20)
+        .navigationTitle("移除書籍")
     }
 }
 

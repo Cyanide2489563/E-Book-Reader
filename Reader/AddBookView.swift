@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct AddBookView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var viewModel: BooksViewModel
+    
     var body: some View {
-        Text("Add Book")
+        VStack {
+            List {
+                ForEach(viewModel.newBooks) { book in
+                    Text(book.title)
+                        .onTapGesture {
+                            viewModel.addBook(book: book)
+                            let index = viewModel.newBooks.firstIndex(of: book)
+                            viewModel.newBooks.remove(at: index!)
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                }
+            }
+        }
     }
 }
 

@@ -15,14 +15,6 @@ struct SideMenuView: View {
                 .background(Color.white)
                 .padding(.horizontal, 8)
             
-            NavigationLink(destination: AddBookView(), label: {
-                Text("新增書籍")
-                    .font(.title)
-                    .underline()
-                    .foregroundColor(.white)
-                    .padding(.vertical, 5)
-            })
-            
             NavigationLink(destination: RemoveBookView(), label: {
                 Text("移除書籍")
                     .font(.title)
