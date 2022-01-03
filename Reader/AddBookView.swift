@@ -25,6 +25,7 @@ struct AddBookView: View {
                 }
             }
         }
+        .navigationTitle("新增書籍")
     }
 }
 
