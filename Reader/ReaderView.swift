@@ -12,15 +12,16 @@ struct ReaderView: View {
     
     var body: some View {
         Text(book.title)
-            .navigationTitle(book.title)
         
         HStack {
+            let size = UIScreen.main.bounds.width / 2
             Button {
                 
             } label: {
                 Image(systemName: "arrow.left")
                 Text("上一頁")
             }
+            .frame(width: size, height: 40)
             
             Button {
                 
@@ -28,11 +29,14 @@ struct ReaderView: View {
                 Text("下一頁")
                 Image(systemName: "arrow.right")
             }
+            .frame(width: size, height: 40)
         }
+        .navigationTitle(book.title)
         .background(Color.gray)
-        .frame(width: UIScreen.main.bounds.width)
         .offset(y: 350)
     }
+    
+    //.frame(width: UIScreen.main.bounds.width)
 }
 
 struct ReaderView_Previews: PreviewProvider {
