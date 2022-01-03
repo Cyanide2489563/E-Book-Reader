@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct RemoveBookView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var viewModel: BooksViewModel
-    @State var deleteBooks = [Book]()
+    @State var showAlert = false
     
     var body: some View {
         ScrollView(.vertical) {
@@ -19,6 +20,27 @@ struct RemoveBookView: View {
                     DeleteBookView(book: book)
                 }
             }
+            Button {
+                showAlert.toggle()
+            } label: {
+                if viewModel.getDeleteBooksCount() > 0 {
+                    Text("刪除書籍")
+                        .padding()
+                        .background(Color.gray)
+                }
+            }
+            .alert("書籍刪除確認", isPresented: $showAlert, actions: {
+                  Button("確定", role: .cancel, action: {
+                      viewModel.removeBooks()
+                      self.presentationMode.wrappedValue.dismiss()
+                  })
+                  Button("取消", role: .destructive, action: {
+                      viewModel.deleteBooks.removeAll()
+                      self.presentationMode.wrappedValue.dismiss()
+                  })
+                }, message: {
+                    Text("將刪除" + String(viewModel.getDeleteBooksCount()) + "本書籍")
+                })
         }
         .offset(y: 20)
         .navigationTitle("移除書籍")
@@ -26,6 +48,7 @@ struct RemoveBookView: View {
 }
 
 struct DeleteBookView: View {
+    @EnvironmentObject var viewModel: BooksViewModel
     var book: Book
     @State var delete = false
     
@@ -44,6 +67,11 @@ struct DeleteBookView: View {
         BookView(book: book)
             .onTapGesture {
                 delete.toggle()
+                if delete {
+                    viewModel.removeBook(book: book)
+                } else {
+                    viewModel.reAddBook(book: book)
+                }
             }
     }
 }

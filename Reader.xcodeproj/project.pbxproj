@@ -18,9 +18,6 @@
 		F469D0C22780873300688922 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469D0C12780873300688922 /* Utility.swift */; };
 		F469D0C4278093F900688922 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469D0C3278093F900688922 /* BookView.swift */; };
 		F4989C652781F19500CF3AF5 /* Librarian.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4989C642781F19500CF3AF5 /* Librarian.swift */; };
-		F4989C692782032700CF3AF5 /* The Complete Edition - Software Engineering for Real-Time Systems.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F4989C682782032700CF3AF5 /* The Complete Edition - Software Engineering for Real-Time Systems.pdf */; };
-		F4989C6D2782067400CF3AF5 /* Modern Computer Architecture and Organization.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F4989C6B2782067400CF3AF5 /* Modern Computer Architecture and Organization.pdf */; };
-		F4989C6E2782067400CF3AF5 /* Software Architect's Handbook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F4989C6C2782067400CF3AF5 /* Software Architect's Handbook.pdf */; };
 		F4A68C18277F75430087EEF1 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A68C17277F75430087EEF1 /* AddBookView.swift */; };
 		F4A68C1A277F75530087EEF1 /* RemoveBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A68C19277F75530087EEF1 /* RemoveBookView.swift */; };
 		F4A68C1C277F75E00087EEF1 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A68C1B277F75E00087EEF1 /* ReaderView.swift */; };
@@ -62,9 +59,6 @@
 		F469D0C12780873300688922 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		F469D0C3278093F900688922 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		F4989C642781F19500CF3AF5 /* Librarian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Librarian.swift; sourceTree = "<group>"; };
-		F4989C682782032700CF3AF5 /* The Complete Edition - Software Engineering for Real-Time Systems.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "The Complete Edition - Software Engineering for Real-Time Systems.pdf"; sourceTree = "<group>"; };
-		F4989C6B2782067400CF3AF5 /* Modern Computer Architecture and Organization.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Modern Computer Architecture and Organization.pdf"; sourceTree = "<group>"; };
-		F4989C6C2782067400CF3AF5 /* Software Architect's Handbook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Software Architect's Handbook.pdf"; sourceTree = "<group>"; };
 		F4A68C17277F75430087EEF1 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		F4A68C19277F75530087EEF1 /* RemoveBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveBookView.swift; sourceTree = "<group>"; };
 		F4A68C1B277F75E00087EEF1 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
@@ -122,7 +116,6 @@
 		9ADB007D2767264400A5C8FC /* Reader */ = {
 			isa = PBXGroup;
 			children = (
-				F4989C6A2782050600CF3AF5 /* PDFs */,
 				9ADB00A827672C8800A5C8FC /* SideMenuView.swift */,
 				9ADB007E2767264400A5C8FC /* ReaderApp.swift */,
 				9ADB00802767264400A5C8FC /* ContentView.swift */,
@@ -165,16 +158,6 @@
 				9ADB009B2767264900A5C8FC /* ReaderUITestsLaunchTests.swift */,
 			);
 			path = ReaderUITests;
-			sourceTree = "<group>";
-		};
-		F4989C6A2782050600CF3AF5 /* PDFs */ = {
-			isa = PBXGroup;
-			children = (
-				F4989C6B2782067400CF3AF5 /* Modern Computer Architecture and Organization.pdf */,
-				F4989C6C2782067400CF3AF5 /* Software Architect's Handbook.pdf */,
-				F4989C682782032700CF3AF5 /* The Complete Edition - Software Engineering for Real-Time Systems.pdf */,
-			);
-			path = PDFs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,11 +265,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C119DE278000EE005185AF /* Launch Screen.storyboard in Resources */,
-				F4989C692782032700CF3AF5 /* The Complete Edition - Software Engineering for Real-Time Systems.pdf in Resources */,
 				9ADB00862767264900A5C8FC /* Preview Assets.xcassets in Resources */,
-				F4989C6E2782067400CF3AF5 /* Software Architect's Handbook.pdf in Resources */,
 				9ADB00832767264900A5C8FC /* Assets.xcassets in Resources */,
-				F4989C6D2782067400CF3AF5 /* Modern Computer Architecture and Organization.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

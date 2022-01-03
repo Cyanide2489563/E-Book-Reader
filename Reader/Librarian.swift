@@ -20,6 +20,8 @@ class BooksViewModel: ObservableObject {
         Book(title: "玻璃瓶塞的祕密", path: "")
     ]
     
+    @Published var deleteBooks = [Book]()
+    
     @Published var newBooks: [Book] = [
         Book(title: "原子習慣", path: ""),
         Book(title: "雜訊", path: ""),
@@ -30,11 +32,32 @@ class BooksViewModel: ObservableObject {
     func addBook(book: Book) {
         books.append(book)
     }
+    
+    func removeBook(book: Book) {
+        deleteBooks.append(book)
+    }
 
     func removeBook(bookTitle: String) {
         for book in books {
             print(book)
         }
+    }
+    
+    func getDeleteBooksCount() -> Int {
+        return deleteBooks.count
+    }
+    
+    func removeBooks() {
+        for deleteBook in deleteBooks {
+            let index = books.firstIndex(of: deleteBook)
+            books.remove(at: index!)
+        }
+        deleteBooks.removeAll()
+    }
+    
+    func reAddBook(book: Book) {
+        let index = deleteBooks.firstIndex(of: book)
+        deleteBooks.remove(at: index!)
     }
     
     func isBookExist(book: Book) -> Bool {
