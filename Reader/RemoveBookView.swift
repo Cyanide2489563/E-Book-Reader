@@ -13,22 +13,31 @@ struct RemoveBookView: View {
     @State var showAlert = false
     
     var body: some View {
-        ScrollView(.vertical) {
-            let columns = Array(repeating: GridItem(), count: 2)    // 自動分成兩欄
-            LazyVGrid(columns: columns) {
-                ForEach(viewModel.books) { book in
-                    DeleteBookView(book: book)
+        ZStack {
+            ScrollView(.vertical) {
+                let columns = Array(repeating: GridItem(), count: 2)    // 自動分成兩欄
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.books) { book in
+                        DeleteBookView(book: book)
+                    }
                 }
             }
+            .offset(y: 20)
+            .navigationTitle("移除書籍")
+            
             Button {
                 showAlert.toggle()
             } label: {
                 if viewModel.getDeleteBooksCount() > 0 {
                     Text("刪除書籍")
+                        .foregroundColor(.white)
+                        .frame(width: 200, height: 40)
+                        .background(Color.red)
+                        .cornerRadius(15)
                         .padding()
-                        .background(Color.gray)
                 }
             }
+            .offset(y: 320)
             .alert("書籍刪除確認", isPresented: $showAlert, actions: {
                   Button("確定", role: .cancel, action: {
                       viewModel.removeBooks()
@@ -42,8 +51,6 @@ struct RemoveBookView: View {
                     Text("將刪除" + String(viewModel.getDeleteBooksCount()) + "本書籍")
                 })
         }
-        .offset(y: 20)
-        .navigationTitle("移除書籍")
     }
 }
 
